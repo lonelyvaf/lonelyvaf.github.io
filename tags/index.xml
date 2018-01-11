@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on lonelyvaf</title>
+    <link>https://lonelyvaf.github.io/tags/</link>
+    <description>Recent content in Tags on lonelyvaf</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>roc@imroc.io (vaf)</managingEditor>
+    <webMaster>roc@imroc.io (vaf)</webMaster>
+    <copyright>vaf</copyright>
+    
+	<atom:link href="https://lonelyvaf.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
