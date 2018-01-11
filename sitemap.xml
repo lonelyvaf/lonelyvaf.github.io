@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://lonelyvaf.github.io/post/codesec/niushop_arbitrary_fileupload1/</loc>
+    <lastmod>2018-01-01T23:38:15-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lonelyvaf.github.io/post/codesec/rsync%E6%9C%8D%E5%8A%A1%E4%B8%8E%E6%90%AD%E5%BB%BA%E8%AF%A6%E8%A7%A3-3rd-copy/</loc>
+    <lastmod>2018-01-01T23:38:15-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lonelyvaf.github.io/post/codesec/rsync%E6%9C%8D%E5%8A%A1%E4%B8%8E%E6%90%AD%E5%BB%BA%E8%AF%A6%E8%A7%A3-4th-copy/</loc>
+    <lastmod>2018-01-01T23:38:15-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lonelyvaf.github.io/post/codesec/rsync%E6%9C%8D%E5%8A%A1%E4%B8%8E%E6%90%AD%E5%BB%BA%E8%AF%A6%E8%A7%A3-5th-copy/</loc>
+    <lastmod>2018-01-01T23:38:15-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lonelyvaf.github.io/post/codesec/rsync%E6%9C%8D%E5%8A%A1%E4%B8%8E%E6%90%AD%E5%BB%BA%E8%AF%A6%E8%A7%A3-another-copy/</loc>
+    <lastmod>2018-01-01T23:38:15-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lonelyvaf.github.io/post/codesec/rsync%E6%9C%8D%E5%8A%A1%E4%B8%8E%E6%90%AD%E5%BB%BA%E8%AF%A6%E8%A7%A3-copy/</loc>
+    <lastmod>2018-01-01T23:38:15-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lonelyvaf.github.io/post/codesec/rsync%E6%9C%8D%E5%8A%A1%E4%B8%8E%E6%90%AD%E5%BB%BA%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2018-01-01T23:38:15-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://lonelyvaf.github.io/about/</loc>
     <lastmod>2018-01-01T23:37:21-08:00</lastmod>
   </url>
@@ -13,13 +48,32 @@
   </url>
   
   <url>
+    <loc>https://lonelyvaf.github.io/tags/codesec/</loc>
+    <lastmod>2018-01-01T23:38:15-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lonelyvaf.github.io/categories/codesec/</loc>
+    <lastmod>2018-01-01T23:38:15-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lonelyvaf.github.io/post/</loc>
+    <lastmod>2018-01-01T23:38:15-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://lonelyvaf.github.io/tags/</loc>
+    <lastmod>2018-01-01T23:38:15-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://lonelyvaf.github.io/</loc>
-    <lastmod>2018-01-01T23:37:21-08:00</lastmod>
+    <lastmod>2018-01-01T23:38:15-08:00</lastmod>
     <priority>0</priority>
   </url>
   

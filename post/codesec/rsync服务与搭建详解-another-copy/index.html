@@ -5,9 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Categories</title>
-  <meta property="og:title" content="Categories" />
-  <meta name="twitter:title" content="Categories" />
+  <title>rsync服务与搭建详解</title>
+  <meta property="og:title" content="rsync服务与搭建详解" />
+  <meta name="twitter:title" content="rsync服务与搭建详解" />
+  <meta name="description" content="##0x01 rsync介绍 rsync全称remote sync，是一种更高效、可以本地或远程同步的命令，之所以高效是因为rsync会对需要同步的源和目的">
+  <meta property="og:description" content="##0x01 rsync介绍 rsync全称remote sync，是一种更高效、可以本地或远程同步的命令，之所以高效是因为rsync会对需要同步的源和目的">
+  <meta name="twitter:description" content="##0x01 rsync介绍 rsync全称remote sync，是一种更高效、可以本地或远程同步的命令，之所以高效是因为rsync会对需要同步的源和目的">
   <meta name="author" content="vaf"/>
   <link href='https://lonelyvaf.github.io/favicon.png' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://lonelyvaf.github.io/images/logo.png" />
@@ -15,13 +18,13 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@imrocchan" />
   <meta name="twitter:creator" content="@imrocchan" />
-  <meta property="og:url" content="https://lonelyvaf.github.io/categories/" />
+  <meta property="og:url" content="https://lonelyvaf.github.io/post/codesec/rsync%E6%9C%8D%E5%8A%A1%E4%B8%8E%E6%90%AD%E5%BB%BA%E8%AF%A6%E8%A7%A3-another-copy/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="lonelyvaf" />
 
   <meta name="generator" content="Hugo 0.32.1" />
-  <link rel="canonical" href="https://lonelyvaf.github.io/categories/" />
-  <link rel="alternate" href="https://lonelyvaf.github.io/categories/index.xml" type="application/rss+xml" title="lonelyvaf">
+  <link rel="canonical" href="https://lonelyvaf.github.io/post/codesec/rsync%E6%9C%8D%E5%8A%A1%E4%B8%8E%E6%90%AD%E5%BB%BA%E8%AF%A6%E8%A7%A3-another-copy/" />
+  <link rel="alternate" href="https://lonelyvaf.github.io/index.xml" type="application/rss+xml" title="lonelyvaf">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -177,9 +180,20 @@ var _hmt = _hmt || [];
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="categories-heading">
-              <h1>Categories</h1>
+            <div class="post-heading">
+              <h1>rsync服务与搭建详解</h1>
                 
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on January 1, 2018
+  
+  
+  
+</span>
+
+
                 
             </div>
           </div>
@@ -190,17 +204,78 @@ var _hmt = _hmt || [];
 
 
     
-  
-  <div class="container" role="main">
-    <article class="post-preview">
-      <div class="list-group col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>##0x01 rsync介绍</p>
+
+<p>rsync全称remote sync，是一种更高效、可以本地或远程同步的命令，之所以高效是因为rsync会对需要同步的源和目的进度行对比，只同步有改变的部分，所以比scp命令更高效，但是rsync本身是一种<font color=red size=3 face=“黑体”>非加密的传输</font>，可以借助-e选项来设置具备加密功能的承载工具进行加密传输</p>
+
+<p>##rsync的工作模式</p>
+
+<p>rsync有四种工作模式分为：</p>
+
+<blockquote>
+<p>1、shell模式，也称作本地模式</p>
+
+<p>2、远程shell模式，此时可以利用ssh协议承载其数据传输过程</p>
+
+<p>3、列表模式，其工作方式与ls相似，仅列出源的内容：-nv</p>
+
+<p>4、服务器模式，此时，rsync可以工作在守护进程，能够接收客户端的数据请求；在使用时，可以在客户端使用rsync命令把文件发送到守护进程，也可以像服务器请求获取文件</p>
+</blockquote>
+
+<p>##配置rsync
+1、rsync是位于xinetd守护进程中,首先安装xinetd
+&gt;yum -y install xinetd<br />
+<pre>
+Loaded plugins: fastestmirror, refresh-packagekit, security
+Determining fastest mirrors
+ * base: mirrors.sohu.com
+ * extras: mirrors.aliyun.com
+        .
+        .
+Running Transaction
+  Installing : 2:xinetd-2.3.14-40.el6.x86_64                                <sup>1</sup>&frasl;<sub>1</sub>
+  Verifying  : 2:xinetd-2.3.14-40.el6.x86_64                                <sup>1</sup>&frasl;<sub>1</sub></p>
+
+<p>Installed:
+  xinetd.x86_64 2:2.3.14-40.el6</p>
+
+<p>Complete!
+</pre>
+2、vim /etc/rsyncd.conf 创建rsync的配置文件
+&gt;auto-rsync
+<a href="https://pypi.python.org/pypi/auto-rsync/0.0.7">https://pypi.python.org/pypi/auto-rsync/0.0.7</a>
+#rsync未授权访问&amp;弱口令</p>
+
+      </article>
+
       
-      <a href="https://lonelyvaf.github.io/categories/codesec/" class="list-group-item">
-          codesec<span class="badge">7</span></a>
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://lonelyvaf.github.io/post/codesec/rsync%E6%9C%8D%E5%8A%A1%E4%B8%8E%E6%90%AD%E5%BB%BA%E8%AF%A6%E8%A7%A3-copy/" data-toggle="tooltip" data-placement="top" title="rsync服务与搭建详解">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://lonelyvaf.github.io/post/codesec/rsync%E6%9C%8D%E5%8A%A1%E4%B8%8E%E6%90%AD%E5%BB%BA%E8%AF%A6%E8%A7%A3-5th-copy/" data-toggle="tooltip" data-placement="top" title="rsync服务与搭建详解">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
       
-      </div>
-    </article>
+
+
+      
+        
+        
+      
+
+    </div>
   </div>
+</div>
 
     <footer>
   <div class="container">
@@ -235,7 +310,7 @@ var _hmt = _hmt || [];
           
           <li>
             
-            <a href="https://lonelyvaf.github.io/categories/index.xml" title="RSS">
+            <a href="https://lonelyvaf.github.io/index.xml" title="RSS">
             
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>

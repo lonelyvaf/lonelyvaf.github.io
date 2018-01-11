@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>lonelyvaf</title>
-    <link>https://lonelyvaf.github.io/</link>
-    <description>Recent content on lonelyvaf</description>
+    <title>Codesec on lonelyvaf</title>
+    <link>https://lonelyvaf.github.io/categories/codesec/</link>
+    <description>Recent content in Codesec on lonelyvaf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <managingEditor>roc@imroc.io (vaf)</managingEditor>
@@ -11,7 +11,7 @@
     <copyright>vaf</copyright>
     <lastBuildDate>Mon, 01 Jan 2018 23:38:15 -0800</lastBuildDate>
     
-	<atom:link href="https://lonelyvaf.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://lonelyvaf.github.io/categories/codesec/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -75,15 +75,6 @@
       <author>roc@imroc.io (vaf)</author>
       <guid>https://lonelyvaf.github.io/post/codesec/rsync%E6%9C%8D%E5%8A%A1%E4%B8%8E%E6%90%AD%E5%BB%BA%E8%AF%A6%E8%A7%A3/</guid>
       <description>##0x01 rsync介绍 rsync全称remote sync，是一种更高效、可以本地或远程同步的命令，之所以高效是因为rsync会对需要同步的源和目的</description>
-    </item>
-    
-    <item>
-      <title>vaf</title>
-      <link>https://lonelyvaf.github.io/about/</link>
-      <pubDate>Mon, 01 Jan 2018 23:37:21 -0800</pubDate>
-      <author>roc@imroc.io (vaf)</author>
-      <guid>https://lonelyvaf.github.io/about/</guid>
-      <description>### 关于我 某乙方漏洞库负责人、i春秋讲师、iot安全爱好者、名不经传 公众号:晨星先生 欢迎关注~</description>
     </item>
     
   </channel>

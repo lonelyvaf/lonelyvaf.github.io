@@ -5,9 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Categories</title>
-  <meta property="og:title" content="Categories" />
-  <meta name="twitter:title" content="Categories" />
+  <title>niushop任意文件上传1</title>
+  <meta property="og:title" content="niushop任意文件上传1" />
+  <meta name="twitter:title" content="niushop任意文件上传1" />
+  <meta name="description" content="niushop任意文件上传1 在工作中意外碰到了一个电商的cms。发现这个东西似乎存在着不少漏洞，花时间审计一翻。就发现了N个上传漏洞。 首先作">
+  <meta property="og:description" content="niushop任意文件上传1 在工作中意外碰到了一个电商的cms。发现这个东西似乎存在着不少漏洞，花时间审计一翻。就发现了N个上传漏洞。 首先作">
+  <meta name="twitter:description" content="niushop任意文件上传1 在工作中意外碰到了一个电商的cms。发现这个东西似乎存在着不少漏洞，花时间审计一翻。就发现了N个上传漏洞。 首先作">
   <meta name="author" content="vaf"/>
   <link href='https://lonelyvaf.github.io/favicon.png' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://lonelyvaf.github.io/images/logo.png" />
@@ -15,13 +18,13 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@imrocchan" />
   <meta name="twitter:creator" content="@imrocchan" />
-  <meta property="og:url" content="https://lonelyvaf.github.io/categories/" />
+  <meta property="og:url" content="https://lonelyvaf.github.io/post/codesec/niushop_arbitrary_fileupload1/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="lonelyvaf" />
 
   <meta name="generator" content="Hugo 0.32.1" />
-  <link rel="canonical" href="https://lonelyvaf.github.io/categories/" />
-  <link rel="alternate" href="https://lonelyvaf.github.io/categories/index.xml" type="application/rss+xml" title="lonelyvaf">
+  <link rel="canonical" href="https://lonelyvaf.github.io/post/codesec/niushop_arbitrary_fileupload1/" />
+  <link rel="alternate" href="https://lonelyvaf.github.io/index.xml" type="application/rss+xml" title="lonelyvaf">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -177,9 +180,20 @@ var _hmt = _hmt || [];
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="categories-heading">
-              <h1>Categories</h1>
+            <div class="post-heading">
+              <h1>niushop任意文件上传1</h1>
                 
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on January 1, 2018
+  
+  
+  
+</span>
+
+
                 
             </div>
           </div>
@@ -190,17 +204,75 @@ var _hmt = _hmt || [];
 
 
     
-  
-  <div class="container" role="main">
-    <article class="post-preview">
-      <div class="list-group col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h3 id="niushop任意文件上传1">niushop任意文件上传1</h3>
+
+<p>在工作中意外碰到了一个电商的cms。发现这个东西似乎存在着不少漏洞，花时间审计一翻。就发现了N个上传漏洞。</p>
+
+<p>首先作为一个脚本小子，总喜欢黑盒来一遍。听闻猪猪侠说，在他的时代,渗透中只要识别一下指纹，然后判断是什么cms。下载一套，本地一搭建马上就能日。虽然赶不上那种时代了。庆幸的心理肯定要有的，指不定就直接getshell了呢？在着，搭建本地靶场测试，能辅助你摸清楚这套程序的逻辑，对白盒的审计也有帮助。<br />
+我们先在本地搭建完进入后台，找出所有可见的上传点。<br />
+<center><strong>1、头像上传处</strong><br />
+<img src="http://res.cloudinary.com/lonelyvaf/image/upload/v1514891127/1_ozzalq.png" alt="" /></center></p>
+
+<p><center><strong>2、商品图片</strong><br />
+<img src="./image2/2.png" alt="" /></center></p>
+
+<p><center><strong>3、logo</strong><br />
+<img src="./image2/3.png" alt="" /></center></p>
+
+<p><center><strong>4、二维码</strong><br />
+<img src="./image2/4.png" alt="" /></center></p>
+
+<p>我们在头像上传处，审核元素，看看其触发哪个js事件。
+<center><img src="./image2/5.png" alt="" /></center><br />
+我使用phpstorm搜索，uploadImg,可以看到不少文件都调用了它。
+<center><img src="./image2/6.png" alt="" /></center><br />
+跟进imgUpload这个事件，跳转到底部的imgUpload函数，该函数调用了uploadFile函数，继续跟进uploadFile函数，跳到了File_upload.js。
+函数内调用validationFile函数验证文件类型。userDetail.html使用File_upload.js，这个也就是我们用户头像上传处html。
+路径：<code>/template/adminblue/Auth/userDetail.html</code></p>
+
+<p>灰盒的阶段到此结束，在这里我们给出的结论是：先是前端js验证文件是否合法，不合法就不让上传。但是我们如果直接抓包工具发送请求或者在chrome中修改就绕过了这一层验证了，所以这一层验证是鸡肋。
+<center><img src="https://lonelyvaf.github.io/image2/7.png" alt="" /></center><br />
+客户端是最不能信任的！</p>
+
+<p>接着我们来看看白盒测试，此时点上传会提示请上传图片文件。
+<center><img src="https://lonelyvaf.github.io/image2/8.png" alt="" /></center>
+unicode解码为：请检查您的上传参数配置或上传的文件是否有误<br />
+原因是在 /application/shop/controller/Member.php
+<center><img src="https://lonelyvaf.github.io/image2/9.png" alt="" /></center>
+这边也验证了MIME类型，我们同样在上传的文件内容伪造GIF89a文件头即可。
+<center><img src="https://lonelyvaf.github.io/image2/10.png" alt="" /></center></p>
+
+<p>可以看到我们上传的文件躺在了服务器中，另外值得一提的是也未验证cookie或者token，也就是说不是管理员用户也能上传。结合网络空间搜索引擎，比如：shodan、fofa。You Know it，you can hack it！
+<center><img src="https://lonelyvaf.github.io/image2/11.png" alt="" /></center></p>
+
+      </article>
+
       
-      <a href="https://lonelyvaf.github.io/categories/codesec/" class="list-group-item">
-          codesec<span class="badge">7</span></a>
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://lonelyvaf.github.io/post/codesec/rsync%E6%9C%8D%E5%8A%A1%E4%B8%8E%E6%90%AD%E5%BB%BA%E8%AF%A6%E8%A7%A3-3rd-copy/" data-toggle="tooltip" data-placement="top" title="rsync服务与搭建详解">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
       
-      </div>
-    </article>
+
+
+      
+        
+        
+      
+
+    </div>
   </div>
+</div>
 
     <footer>
   <div class="container">
@@ -235,7 +307,7 @@ var _hmt = _hmt || [];
           
           <li>
             
-            <a href="https://lonelyvaf.github.io/categories/index.xml" title="RSS">
+            <a href="https://lonelyvaf.github.io/index.xml" title="RSS">
             
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
